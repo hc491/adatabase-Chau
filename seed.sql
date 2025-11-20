@@ -1,9 +1,9 @@
-/* INSERT INTO themes (id,name,description)
+INSERT INTO themes (id,name,description,created_at,updated_at)
 VALUES
-(1,'Frontend','partie visible'),
-(2,'Backend','fonctionne coté serveur'),
-(3,'Base de données','gérer les informations'),
-(4,'DevOps','unifier le développement'); */
+(1,'Frontend','partie visible',NOW(),NOW()),
+(2,'Backend','fonctionne coté serveur',NOW(),NOW()),
+(3,'Base de données','gérer les informations',NOW(),NOW()),
+(4,'DevOps','unifier le développement',NOW(),NOW());
 
 /* INSERT INTO skills (id,name)
 VALUES

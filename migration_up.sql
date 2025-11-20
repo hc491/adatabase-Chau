@@ -1,9 +1,9 @@
-/* CREATE TABLE themes (
+ CREATE TABLE themes (
     id serial PRIMARY KEY,
     name TEXT NOT NULL,
     description TEXT NOT NULL,
-    created_at INTEGER,
-    updated_at INTEGER
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE resources (
