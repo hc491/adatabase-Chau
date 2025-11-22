@@ -25,7 +25,7 @@ ALTER COLUMN updated_at TYPE TIMESTAMP USING to_timestamp(updated_at);
 
 
 
-/* CREATE TABLE resources_skills (
+CREATE TABLE resources_skills (
     id INTEGER PRIMARY KEY,
     resource_id INTEGER REFERENCES resources(id),
     skill_id INTEGER REFERENCES skills(id)
@@ -34,4 +34,4 @@ ALTER COLUMN updated_at TYPE TIMESTAMP USING to_timestamp(updated_at);
 CREATE TABLE skills (
     id INTEGER PRIMARY KEY,
     name TEXT NOT NULL
-); */
+);
