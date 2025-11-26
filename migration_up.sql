@@ -1,4 +1,6 @@
- CREATE TABLE themes (
+CREATE TYPE ressources_types AS ENUM ('guide','video','exercice','projet');
+
+CREATE TABLE themes (
     id serial PRIMARY KEY,
     name TEXT NOT NULL,
     description TEXT NOT NULL,
@@ -8,15 +10,15 @@
 
 CREATE TABLE resources (
     id INTEGER PRIMARY KEY,
-    type TEXT NOT NULL,
+    type ressources_types,
     title TEXT NOT NULL,
     description TEXT NOT NULL,
     url TEXT NOT NULL,
     is_ada TEXT NOT NULL,
-    theme_id TEXT NOT NULL,
+    theme_id INTEGER REFERENCES themes(id),
     created_at INTEGER,
     updated_at INTEGER
-); */
+);
 
 ALTER TABLE resources
 ALTER COLUMN is_ada TYPE BOOLEAN USING is_ada::BOOLEAN,
@@ -26,10 +28,11 @@ ALTER COLUMN updated_at TYPE TIMESTAMP USING to_timestamp(updated_at);
 
 
 CREATE TABLE resources_skills (
-    id INTEGER PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     resource_id INTEGER REFERENCES resources(id),
     skill_id INTEGER REFERENCES skills(id)
 );
+
 
 CREATE TABLE skills (
     id INTEGER PRIMARY KEY,

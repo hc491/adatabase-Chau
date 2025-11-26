@@ -1,4 +1,6 @@
+DROP TYPE IF EXISTS ressources_types CASCADE;
 DROP TABLE IF EXISTS themes;
 DROP TABLE IF EXISTS resources;
 DROP TABLE IF EXISTS resources_skills;
 DROP TABLE IF EXISTS skills;
+

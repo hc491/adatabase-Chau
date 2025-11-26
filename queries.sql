@@ -19,3 +19,18 @@ WHERE resources_skills.skill_id = 1;
 SELECT *
 FROM resources
 WHERE LOWER(title) LIKE '%react%';
+
+
+SELECT themes.name,
+COUNT(resources.id) OVER (PARTITION BY themes.id)
+FROM themes
+LEFT JOIN resources
+ON themes.id = resources.theme_id;
+
+
+SELECT resources.title,resources.url,skills.name
+FROM resources
+JOIN resources_skills
+ON resources.id = resources_skills.resource_id
+JOIN skills
+ON resources_skills.skill_id = skills.id;
